@@ -1,0 +1,14 @@
+node_modules
+.idea/
+docs/
+entry/
+
+src/vendor/
+src/directives/
+src/dll/
+
+www/*
+
+**/gulpfile.js
+
+**/webpack*.js

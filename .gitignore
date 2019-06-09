@@ -1,0 +1,15 @@
+node_modules/
+.sass-cache/
+www/
+stats.json
+.idea/
+dist/
+webpack-assets.json
+.project/
+docs/_book/
+*.log
+.DS_Store
+*/.DS_Store
+./vsCode
+docs/
+*.log

@@ -1,0 +1,84 @@
+@mixin office-overflow() {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+// 纯字母不换行
+@mixin office-text-wrap () {
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
+// single ellipsis
+@mixin office-single-ellipsis {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// more ellipsis
+@mixin office-more-ellipsis($line: 3) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical; // 参考 https://github.com/postcss/autoprefixer/issues/776
+  -webkit-line-clamp: $line;  //这里是在第三行有省略号
+  overflow: hidden;
+}
+
+// img style
+@mixin office-img-style($width: 44px, $height: 44px, $color: #afafb2) {
+  display: inline-block;
+  object-fit: cover;
+  width: $width;
+  height: $height;
+}
+
+// placeholder color
+@mixin office-placeholder-color($color: #afafb2) {
+  /* WebKit browsers */
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+
+  /* Mozilla Firefox 19+ */
+  &::-moz-placeholder {
+    color: $color;
+  }
+
+  /* Mozilla Firefox 4 to 18 */
+  &:-moz-placeholder {
+    color: $color;
+  }
+
+  /* Internet Explorer 10+ */
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+}
+
+// test
+@mixin test($color: red) {
+  border: 1px solid $color;
+}
+
+@mixin themify($themes: $themes) {
+  @each $theme-name, $map in $themes {
+    .theme-#{$theme-name} & {
+
+      $theme-map:() !global;
+
+      @each $key, $value in $map {
+        $theme-map: map-merge($theme-map, ($key: $value)) !global;
+      }
+
+      @content;
+
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function themed($key) {
+  @return map-get($theme-map, $key);
+}

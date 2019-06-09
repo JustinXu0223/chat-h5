@@ -1,0 +1,47 @@
+// Color variables
+$primary-color: #433dad;
+$warning-color: #ed6a0c;
+$danger-color: #f44;
+$success-color: #07c160;
+$white-color: #fff;
+$black-color: #000;
+$green-color: #009915;
+$border-color: #f3f4f6;
+
+$text-color: #6d788e;
+$text-light-color: rgba(13, 14, 21, 0.6);
+$blue-color: #1f73ff;
+
+$page-bg-color: #f6f6f6;
+
+// header
+$header-height: 45px;
+
+// tabBar
+$tab-bar-height: 60px;
+
+// z-index
+$header-z-index: 99;
+$tab-bar-z-index: 99;
+
+// button
+$button-disabled-color: #9ca8b6;
+$button-text-color: $white-color;
+
+// theme
+$themes: (
+  light: (
+    // color variables
+    primary-color: #f44,
+    // header
+    header-bg-color: #191a25,
+    header-text-color: $white-color,
+  ),
+  dark: (
+    // color variables
+    primary-color: #2977b5,
+    // header
+    header-bg-color: #e4393c,
+    header-text-color: $black-color,
+  ),
+);
